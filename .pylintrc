@@ -1,0 +1,21 @@
+[MASTER]
+ignore=tests,venv,mlruns
+
+[MESSAGES CONTROL]
+# Disable specific checks that are too strict for ML code
+disable=
+    C0103, # Invalid variable name (allows X, y, etc.)
+    C0114, # Missing module docstring
+    C0115, # Missing class docstring
+    C0116, # Missing function docstring
+    R0903, # Too few public methods
+    R0801, # Duplicate code (common in training scripts)
+    W0611, # Unused import (sometimes needed for dynamic loading)
+    W0703  # Catching too general exception
+
+[FORMAT]
+max-line-length=120
+
+[BASIC]
+# Allow X and y as variable names (Industry standard for ML)
+good-names=i,j,k,ex,Run,_,X,y,id,db,df,x,y,X_train,X_test,y_train,y_test,x_train,x_test
