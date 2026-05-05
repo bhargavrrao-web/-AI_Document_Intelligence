@@ -41,8 +41,8 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
         # NER
         entities = extract_entities(text)
         
-        # Classification
-        doc_type = classify_document(text)
+        # Classification (Deep Learning Concept: Prediction + Score)
+        doc_type, dl_score = classify_document(text)
         
         # Vector Embedding
         embedding = get_embedding(text)
@@ -56,6 +56,7 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
             mlflow.log_param("document_type", doc_type)
             mlflow.log_param("quantum_analysis", q_result)
             mlflow.log_metric("processing_time", time.time() - start_time)
+            mlflow.log_metric("dl_confidence_score", dl_score)
             mlflow.log_dict(entities, "extracted_entities.json")
             
         # Save to DB
@@ -79,7 +80,15 @@ async def upload_document(file: UploadFile = File(...), db: Session = Depends(ge
         faiss_index.add(np.array([embedding], dtype=np.float32))
         doc_ids_mapping.append(db_result.id)
         
-        return {"message": "Extracted successfully", "data": db_result}
+        return {
+            "message": "Extracted successfully", 
+            "data": db_result,
+            "dl_concept": {
+                "model": "distilbart-mnli",
+                "prediction": doc_type,
+                "confidence_score": dl_score
+            }
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

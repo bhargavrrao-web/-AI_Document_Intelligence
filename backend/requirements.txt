@@ -13,3 +13,5 @@ torch
 sentence-transformers
 faiss-cpu
 pennylane
+scikit-learn
+pandas

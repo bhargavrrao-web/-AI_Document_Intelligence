@@ -1,0 +1,13 @@
+text,label
+"Total amount due $500.00. Please pay by end of month. Invoice #12345.",Invoice
+"Invoice for consultancy services. Amount: $1500. Reference: INV-001.",Invoice
+"Monthly utility bill for electricity and water. Payment due immediately.",Invoice
+"Expert software engineer with 5 years of experience in Python and Java. Skills: Docker, AWS.",Resume
+"Highly motivated data scientist seeking a role in ML. Proficient in PyTorch and SQL.",Resume
+"Experienced project manager with a focus on agile methodologies and team leadership.",Resume
+"This contract is entered into by and between Company A and Company B.",Contract
+"Non-disclosure agreement regarding the sharing of confidential business information.",Contract
+"Terms and conditions for the lease of the commercial property at 123 Main St.",Contract
+"Quarterly financial report for the period ending December 2025. Revenue increased by 10%.",Report
+"Annual progress report on the sustainability initiatives and environmental impact.",Report
+"Weekly status update regarding the development of the AI Document Intelligence system.",Report
