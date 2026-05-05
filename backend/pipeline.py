@@ -1,5 +1,9 @@
 import pytesseract
 from pdf2image import convert_from_bytes
+"""
+Document Processing Pipeline
+Handles OCR, NLP, and Model Inference.
+"""
 import spacy
 from PIL import Image
 import io

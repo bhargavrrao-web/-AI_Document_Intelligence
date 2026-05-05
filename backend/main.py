@@ -1,3 +1,7 @@
+"""
+AI Document Intelligence API
+Main entry point for the FastAPI backend.
+"""
 from fastapi import FastAPI, UploadFile, File, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import get_db, DocumentResult
