@@ -2,16 +2,16 @@
 Machine Learning Training Script
 Trains a Random Forest classifier for document types.
 """
+import os
+import joblib
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import joblib
 import mlflow
 import mlflow.sklearn
 from sentence_transformers import SentenceTransformer
-import os
 
 # Configuration
 DATA_PATH = "data/document_dataset.csv"
@@ -32,11 +32,11 @@ def train_model():
     # 2. Extract Features using Sentence Transformer
     print("🧠 Extracting text embeddings...")
     embedder = SentenceTransformer("all-MiniLM-L6-v2")
-    X = embedder.encode(df['text'].tolist())
-    y = df['label']
+    x_data = embedder.encode(df['text'].tolist())
+    y_data = df['label']
 
     # 3. Split Data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.2, random_state=42)
 
     # 4. Setup MLflow
     mlflow.set_tracking_uri("sqlite:///mlruns.db")
@@ -47,10 +47,10 @@ def train_model():
         # 5. Train Model
         n_estimators = 100
         clf = RandomForestClassifier(n_estimators=n_estimators, random_state=42)
-        clf.fit(X_train, y_train)
+        clf.fit(x_train, y_train)
 
         # 6. Evaluate
-        predictions = clf.predict(X_test)
+        predictions = clf.predict(x_test)
         acc = accuracy_score(y_test, predictions)
         print(f"✅ Training Complete. Accuracy: {acc:.4f}")
 
