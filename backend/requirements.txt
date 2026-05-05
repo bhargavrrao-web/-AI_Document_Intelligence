@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+sqlalchemy
+mlflow
+pytesseract
+pdf2image
+spacy
+Pillow
+pydantic
+transformers<5.0.0
+torch
+sentence-transformers
+faiss-cpu
+pennylane

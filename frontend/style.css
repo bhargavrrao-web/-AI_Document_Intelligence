@@ -1,0 +1,163 @@
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+/* Main Background Gradient matching screenshot */
+html, body, [class*="css"]  {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #f8fafc;
+    background: linear-gradient(105deg, #aec2cd 0%, #ffc86b 40%, #fd7321 100%);
+    background-attachment: fixed;
+}
+
+/* Main Container styling */
+.main .block-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: 1100px;
+    background: rgba(15, 5, 28, 0.55);
+    backdrop-filter: blur(40px);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Headers */
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    letter-spacing: -1.5px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+h2, h3 {
+    font-family: 'Outfit', sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+/* Uploader box */
+[data-testid="stFileUploadDropzone"] {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-testid="stFileUploadDropzone"]:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(118, 55, 218, 0.4);
+    border-color: rgba(118, 55, 218, 0.8);
+}
+
+/* Buttons (Pill shape, dark with neon border like screenshot) */
+.stButton > button {
+    background: #090510;
+    color: white;
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    border-radius: 30px;
+    padding: 0.8rem 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: rgba(168, 85, 247, 1);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+    background: #150a25;
+    color: white;
+}
+
+.stButton > button:active {
+    transform: translateY(1px);
+}
+
+/* Input Fields */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Cards (using st.container/metrics) */
+div[data-testid="metric-container"] {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+}
+
+div[data-testid="metric-container"]:hover {
+    transform: translateY(-5px);
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 15px 35px -10px rgba(168, 85, 247, 0.3);
+}
+
+/* Dataframe styling */
+.stDataFrame {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Spinner */
+.stSpinner > div > div {
+    border-top-color: #a855f7 !important;
+}
+
+/* Success/Error/Info Messages */
+.stAlert {
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+/* Tabs */
+[data-baseweb="tab"] {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.6);
+}
+
+[data-baseweb="tab-list"] {
+    gap: 2.5rem;
+}
+
+[data-baseweb="tab-highlight"] {
+    background-color: #a855f7;
+}
+
+[data-baseweb="tab"][aria-selected="true"] {
+    color: #ffffff;
+}
